@@ -1,24 +1,18 @@
 package com.myshop.orderservice.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
 
 @Entity
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Table(name = "orders")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private Long productId;
-    private int quantity;
-    private double totalPrice;
+    private Integer quantity;
+    private Double totalPrice;
+
     private String status;
 
     public Long getId() {
@@ -37,19 +31,19 @@ public class Order {
         this.productId = productId;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
-    public double getTotalPrice() {
+    public Double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(double totalPrice) {
+    public void setTotalPrice(Double totalPrice) {
         this.totalPrice = totalPrice;
     }
 
@@ -61,4 +55,3 @@ public class Order {
         this.status = status;
     }
 }
-
