@@ -1,6 +1,7 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/orderdb
+#    url: jdbc:postgresql://localhost:5432/orderdb
+    url: jdbc:postgresql://host.docker.internal:5432/orderdb
     username: postgres
     password: postgres   # your PG password
     driver-class-name: org.postgresql.Driver
@@ -18,7 +19,8 @@ server:
 
 splunk:
   hec:
-    url: http://localhost:8088
+#    url: http://localhost:8088
+    url: http://host.docker.internal:8088
     token: 82d3b871-1db4-4da8-983a-6c08bed3f0b9
     index: main
     source-type: springboot-logs
